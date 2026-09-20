@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
-  "id": "flo.kbd-backlight",
+  "id": "floscom.kbd-backlight",
   "name": "Keyboard backlight",
   "version": "1.0.0",
-  "author": "flo",
+  "author": "floscom",
   "license": "MIT",
   "description": "Ambient-light-driven keyboard backlight with a bar widget for tuning the curve.",
   "kinds": [

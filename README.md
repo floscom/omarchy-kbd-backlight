@@ -21,16 +21,16 @@ the hardware is discovered by glob, so any machine exposing a
 ## Install
 
 ```bash
-omarchy plugin add https://github.com/<you>/omarchy-kbd-backlight.git --enable --yes
-omarchy bar move flo.kbd-backlight --section right
+omarchy plugin add https://github.com/floscom/omarchy-kbd-backlight.git --enable --yes
+omarchy bar move floscom.kbd-backlight --section right
 ```
 
 Or, for local development, symlink the checkout and rescan:
 
 ```bash
-ln -s ~/Dev/omarchy-kbd-backlight ~/.config/omarchy/plugins/flo.kbd-backlight
+ln -s ~/Dev/omarchy-kbd-backlight ~/.config/omarchy/plugins/floscom.kbd-backlight
 omarchy-shell shell rescanPlugins
-omarchy plugin enable flo.kbd-backlight
+omarchy plugin enable floscom.kbd-backlight
 ```
 
 `inotifywait` does not follow the symlink, so edits under `~/Dev` need an
@@ -87,11 +87,11 @@ Slow `4000 / 0.8`, Normal `2000 / 0.65`, Fast `1000 / 0.35`.
 ## IPC
 
 ```bash
-omarchy-shell flo.kbd-backlight status       # "40% · 16 lx · auto"
-omarchy-shell flo.kbd-backlight toggleAuto
-omarchy-shell flo.kbd-backlight up           # +10%, drops out of auto
-omarchy-shell flo.kbd-backlight down
-omarchy-shell flo.kbd-backlight toggle       # the panel
+omarchy-shell floscom.kbd-backlight status       # "40% · 16 lx · auto"
+omarchy-shell floscom.kbd-backlight toggleAuto
+omarchy-shell floscom.kbd-backlight up           # +10%, drops out of auto
+omarchy-shell floscom.kbd-backlight down
+omarchy-shell floscom.kbd-backlight toggle       # the panel
 ```
 
 `up` / `down` are the things to bind to `XF86KbdBrightnessUp` / `Down` in

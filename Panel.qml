@@ -12,11 +12,11 @@ import "Model.js" as Model
 // service rather than the other way around.
 Panel {
   id: root
-  moduleName: "flo.kbd-backlight"
-  ipcTarget: "flo.kbd-backlight"
+  moduleName: "floscom.kbd-backlight"
+  ipcTarget: "floscom.kbd-backlight"
   manageIpc: false
 
-  readonly property var service: bar && bar.shell ? bar.shell.serviceFor("flo.kbd-backlight") : null
+  readonly property var service: bar && bar.shell ? bar.shell.serviceFor("floscom.kbd-backlight") : null
   readonly property var config: Model.withDefaults(settings)
 
   readonly property bool available: service ? service.available : false

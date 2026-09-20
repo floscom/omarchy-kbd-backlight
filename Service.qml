@@ -149,7 +149,7 @@ Item {
         root.sensorPath = found.sensorPath
         root.probed = true
         if (!root.available) {
-          console.warn("flo.kbd-backlight: no *kbd_backlight* LED found; plugin idle")
+          console.warn("floscom.kbd-backlight: no *kbd_backlight* LED found; plugin idle")
           return
         }
         pollProc.running = true
