@@ -18,6 +18,16 @@ the hardware is discovered by glob, so any machine exposing a
   `system-sleep` hook zeroes.
 - Falls back to a plain manual level when no sensor is present.
 
+## Requirements
+
+| Dependency | Why | Notes |
+|---|---|---|
+| `brightnessctl` | the only way this writes to the LED | ships in Omarchy's base package set |
+| a `*kbd_backlight*` LED | the thing being controlled | `ls /sys/class/leds/` |
+| an IIO ambient light sensor | optional | without one the plugin falls back to a manual level |
+
+Nothing else. No daemon, no suid binary, no udev rule, no Python.
+
 ## Install
 
 ```bash
@@ -36,6 +46,30 @@ omarchy plugin enable floscom.kbd-backlight
 `inotifywait` does not follow the symlink, so edits under `~/Dev` need an
 explicit `omarchy-shell shell rescanPlugins` to take effect. A real checkout in
 `~/.config/omarchy/plugins/` hot-reloads on save.
+
+## Removal
+
+```bash
+omarchy plugin remove floscom.kbd-backlight --yes
+```
+
+That takes the widget out of the bar and deletes the checkout. The plugin
+stores nothing outside its own entry in `~/.config/omarchy/shell.json`, which
+`omarchy plugin remove` clears, so there is nothing else to clean up.
+
+The keyboard backlight keeps whatever level it was last set to. To reset it:
+
+```bash
+brightnessctl -d smc::kbd_backlight set 0
+```
+
+For a symlinked development checkout, remove the link and rescan instead:
+
+```bash
+omarchy plugin disable floscom.kbd-backlight
+rm ~/.config/omarchy/plugins/floscom.kbd-backlight
+omarchy-shell shell rescanPlugins
+```
 
 ## Using it
 
