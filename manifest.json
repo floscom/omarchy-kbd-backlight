@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "floscom.kbd-backlight",
-  "name": "Keyboard backlight",
+  "name": "Keyboard backlight (light sensor)",
   "version": "1.0.0",
   "author": "floscom",
   "license": "MIT",

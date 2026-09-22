@@ -7,6 +7,8 @@ Built for a MacBook running Omarchy (`applesmc` LED + `acpi-als` sensor), but
 the hardware is discovered by glob, so any machine exposing a
 `*kbd_backlight*` LED and an IIO `in_illuminance_raw` sensor works unchanged.
 
+![The panel: the live sensor reading, the range it maps onto, and the thresholds that bound it](preview.png)
+
 ## What it does
 
 - Polls the ambient light sensor and maps the reading onto a backlight level:
